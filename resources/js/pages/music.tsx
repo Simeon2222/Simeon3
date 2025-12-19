@@ -1,11 +1,12 @@
-import React from 'react';
-import Music from '@/components/music';
+import React, { Suspense, lazy } from 'react';
+
+const Music = lazy(() => import('../components/music'));
 
 const MusicPage: React.FC = () => {
     return (
-        <div>
+        <Suspense fallback={<div>Loading music...</div>}>
             <Music />
-        </div>
+        </Suspense>
     );
 };
 
