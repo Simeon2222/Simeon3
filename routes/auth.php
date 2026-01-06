@@ -60,18 +60,18 @@ Route::middleware('auth')->group(function () {
 
 
 
-    Route::get('/music', [MusicController::class, 'index'])
+    Route::get('/music', [MusicFileController::class, 'index'])
         ->name('music.index');
 
     Route::post('/music', [MusicController::class, 'store'])
         ->name('music.store');
 
-    Route::get('/music/{music}', [MusicController::class, 'show'])
+    Route::get('/music/{music}', [MusicFileController::class, 'show'])
         ->name('music.show');
 
     Route::put('/music/{music}', [MusicController::class, 'update'])
         ->name('music.update');
 
-    Route::delete('/music/{music}', [MusicController::class, 'destroy'])
+    Route::delete('/music/{music}', [MusicFileController::class, 'destroy'])
         ->name('music.destroy');
 });
