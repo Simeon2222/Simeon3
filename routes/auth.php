@@ -63,13 +63,13 @@ Route::middleware('auth')->group(function () {
     Route::get('/music', [MusicFileController::class, 'index'])
         ->name('music.index');
 
-    Route::post('/music', [MusicController::class, 'store'])
+    Route::post('/music', [MusicFileController::class, 'store'])
         ->name('music.store');
 
     Route::get('/music/{music}', [MusicFileController::class, 'show'])
         ->name('music.show');
 
-    Route::put('/music/{music}', [MusicController::class, 'update'])
+    Route::put('/music/{music}', [MusicFileController::class, 'update'])
         ->name('music.update');
 
     Route::delete('/music/{music}', [MusicFileController::class, 'destroy'])
